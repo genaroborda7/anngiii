@@ -151,12 +151,19 @@ function iniciarPuzzle(){
 
         pieza.className="pieza";
 
-        const fila=Math.floor(posicion/3);
-        const columna=posicion%3;
+     const ancho = puzzle.clientWidth;
+const alto = puzzle.clientHeight;
 
-        pieza.style.backgroundPosition=
-        `${-columna*100}px ${-fila*125}px`;
+const anchoPieza = ancho / 3;
+const altoPieza = alto / 3;
 
+const fila = Math.floor(posicion / 3);
+const columna = posicion % 3;
+
+pieza.style.backgroundSize = `${ancho}px ${alto}px`;
+
+pieza.style.backgroundPosition =
+`${-columna * anchoPieza}px ${-fila * altoPieza}px`;
         pieza.dataset.correcta=indice;
         pieza.dataset.actual=posicion;
 
@@ -354,7 +361,7 @@ te amo con locura pichona, no se que seria de mi sin vos y tu locura.
 
         },1400);
 
-    },6500);
+    },6200);
 
 }
 

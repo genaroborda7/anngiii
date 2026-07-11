@@ -424,8 +424,10 @@ button:active{
 
 #puzzle{
 
-    width:300px;
+     width:300px;
     height:375px;
+
+    aspect-ratio:4/5;
 
     margin:25px auto;
 
@@ -450,9 +452,9 @@ button:active{
 
     cursor:pointer;
 
-    background-image:url("img/foto.png");
+    background-image:url("img/foto.PNG");
 
-    background-size:300px 375px;
+    background-size: 300px 375px;
 
     background-repeat:no-repeat;
 
