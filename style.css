@@ -1,0 +1,875 @@
+body{
+
+    margin:0;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+
+    padding:30px 15px;
+    box-sizing:border-box;
+    overflow-y: auto;
+
+    background:linear-gradient(
+        135deg,
+        #ff8ec7,
+        #ffb6d9,
+        #ffd6ea,
+        #ffe7f4
+    );
+
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+/* =======================
+   CUADRO BLANCO
+======================= */
+
+.contenedor{
+
+    width:min(100%,420px);
+
+    padding:30px;
+    box-sizing: border-box;
+margin: auto;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:10;
+
+    background:rgba(255,255,255,.78);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.6);
+
+    border-radius:30px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.12),
+        0 0 25px rgba(255,255,255,.35);
+
+}
+
+/* =======================
+   TEXTOS
+======================= */
+
+h1{
+
+    font-size:70px;
+
+    margin-bottom:10px;
+
+}
+
+h2{
+
+    color:#ff4f91;
+
+}
+
+p{
+
+    color:#555;
+
+    line-height:28px;
+
+}
+
+/* =======================
+   BOTÓN
+======================= */
+
+button{
+
+    margin-top:25px;
+
+    padding:16px 35px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:linear-gradient(135deg,#ff4f91,#ff7fb4);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 10px 25px rgba(255,79,145,.35);
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+button:active{
+
+    transform:scale(.96);
+
+}
+
+/* =======================
+   REGALO
+======================= */
+
+.regalo{
+
+    animation:latido 2s infinite;
+
+}
+
+@keyframes latido{
+
+    0%{transform:scale(1);}
+    25%{transform:scale(1.08);}
+    50%{transform:scale(1);}
+    75%{transform:scale(1.12);}
+    100%{transform:scale(1);}
+
+}
+
+/* =======================
+   PANTALLAS
+======================= */
+
+.pantalla{
+    display:none;
+
+}
+
+.pantalla.activa{
+
+    display:block;
+
+    animation:aparecer .7s ease;
+
+}
+
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =======================
+   DECORACIONES
+======================= */
+
+.decoraciones{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+.decoraciones span{
+
+    position:absolute;
+
+    font-size:35px;
+
+    opacity:.35;
+
+    animation:flotar 5s ease-in-out infinite;
+
+}
+
+.d1{top:40px;left:60px;}
+.d2{top:120px;right:90px;animation-delay:1s;}
+.d3{top:250px;left:120px;animation-delay:2s;}
+.d4{bottom:80px;left:70px;font-size:55px;animation-delay:3s;}
+.d5{bottom:120px;right:120px;animation-delay:1.5s;}
+.d6{top:80px;left:50%;animation-delay:4s;}
+.d7{bottom:220px;right:220px;animation-delay:2.5s;}
+.d8{top:45%;right:80px;animation-delay:3.5s;}
+
+@keyframes flotar{
+
+    0%{
+
+        transform:translateY(0) rotate(0deg);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px) rotate(5deg);
+
+    }
+
+    100%{
+
+        transform:translateY(0) rotate(0deg);
+
+    }
+
+}
+/*=========================
+        PROGRESO
+==========================*/
+
+.progreso{
+
+    margin-bottom:35px;
+
+}
+
+.progreso p{
+
+    font-weight:bold;
+
+    margin-bottom:12px;
+
+    color:#ff4f91;
+
+}
+
+.barra{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+}
+
+.paso{
+
+    width:22px;
+
+    height:22px;
+
+    border-radius:8px;
+
+    background:#ffd3e5;
+
+    transition:.4s;
+
+}
+
+.paso.activo{
+
+    background:#ff4f91;
+
+    box-shadow:0 0 12px rgba(255,79,145,.5);
+
+}
+.emojis{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+    margin-top:30px;
+
+}
+
+.emojis span{
+
+    font-size:45px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.emojis span:hover{
+
+    transform:scale(1.25);
+
+}
+
+#mensaje{
+
+    margin-top:30px;
+
+    font-weight:bold;
+
+    color:#ff4f91;
+
+}
+#corazon{
+
+    display:inline-block;
+
+}
+
+.corazonCorrecto{
+
+    animation:latidoCorazon .6s ease-in-out 2;
+
+}
+
+@keyframes latidoCorazon{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.5);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+.opciones{
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-top:25px;
+
+}
+
+.respuesta{
+
+    width:100%;
+}
+
+.correctaAnimacion{
+
+    background:#6ddf8f !important;
+
+}
+
+.incorrectaAnimacion{
+
+    background:#ff9d9d !important;
+
+}
+@media (max-width:480px){
+
+    .contenedor{
+
+        width:100%;
+        max-width:360px;
+
+        padding:25px;
+
+        border-radius:28px;
+
+    }
+
+    h1{
+
+        font-size:58px;
+
+    }
+
+    h2{
+
+        font-size:30px;
+
+    }
+
+    p{
+
+        font-size:17px;
+        line-height:24px;
+
+    }
+
+    button{
+
+        width:100%;
+
+        padding:15px;
+
+        font-size:18px;
+
+    }
+
+}
+/*=========================
+      ROMPECABEZAS
+=========================*/
+
+#puzzle{
+
+    width:300px;
+    height:375px;
+
+    margin:25px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    grid-template-rows:repeat(3,1fr);
+
+    gap:3px;
+
+}
+
+.pieza{
+
+    width:100%;
+    height:100%;
+
+    border-radius:8px;
+
+    border:2px solid white;
+
+    cursor:pointer;
+
+    background-image:url("img/foto.png");
+
+    background-size:300px 375px;
+
+    background-repeat:no-repeat;
+
+    transition:.25s;
+
+}
+
+.pieza:hover{
+
+    transform:scale(1.03);
+
+}
+.seleccionada{
+
+    outline:4px solid #ff4f91;
+
+    transform:scale(1.05);
+
+}
+/*=========================
+        FOTO FINAL
+=========================*/
+
+.fotoFinal{
+
+    display:flex;
+    justify-content:center;
+    margin-bottom:20px;
+
+}
+
+.fotoFinal img{
+
+    width:100%;
+    max-width:300px;
+    height:auto;
+
+    display:block;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+@keyframes zoomFoto{
+
+    from{
+
+        transform:scale(.6);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+.ocultarPantalla{
+
+    animation:desaparecer .8s forwards;
+
+}
+
+.fotoDesaparece{
+
+    animation:fotoSale 1.3s ease forwards;
+
+}
+
+@keyframes fotoSale{
+
+    0%{
+
+        opacity:1;
+        transform:translateY(0) scale(1);
+
+    }
+
+    100%{
+
+        opacity:0;
+        transform:translateY(50px) scale(.75);
+
+    }
+
+}
+#textoCarta{
+
+    white-space:pre-line;
+
+    font-size:18px;
+
+    line-height:32px;
+
+    max-width:100%;
+
+    word-break:break-word;
+
+}
+.ocultarFinal{
+
+    opacity:0;
+
+    transform:translateY(35px);
+
+    transition:all .9s ease;
+
+}
+#pantalla9 h1{
+
+    animation:entradaSobre .8s ease;
+
+}
+
+@keyframes entradaSobre{
+
+    0%{
+
+        opacity:0;
+        transform:scale(.4) rotate(-15deg);
+
+    }
+
+    70%{
+
+        transform:scale(1.15);
+
+    }
+
+    100%{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+}
+.carta{
+
+    margin-top:25px;
+
+    padding:25px;
+
+    background:white;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    text-align:left;
+
+      transform-origin:top;
+
+    animation:abrirCarta .8s ease;
+}
+#btnFinal{
+
+    animation:latido 2s infinite;
+
+}
+#botonesFinales{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    margin-top:30px;
+
+    animation:aparecer .8s;
+
+}
+.cartaOculta{
+
+    animation:desapareceCarta .8s forwards;
+
+}
+
+@keyframes desapareceCarta{
+
+    from{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        opacity:0;
+        transform:translateY(-20px);
+
+    }
+
+}
+
+@keyframes abrirCarta{
+
+    0%{
+
+        opacity:0;
+        transform:rotateX(-90deg);
+
+    }
+
+    100%{
+
+        opacity:1;
+        transform:rotateX(0deg);
+
+    }
+
+}
+
+.cartaOculta{
+
+    opacity:0;
+
+    transform:translateY(-25px);
+
+}
+.firma{
+
+    display:block;
+
+    margin-top:10px;
+
+    text-align:right;
+
+    font-style:italic;
+
+    font-weight:bold;
+
+    color:#ff4f91;
+
+    font-size:22px;
+
+}
+/*=========================
+        SOBRE
+=========================*/
+
+#sobre{
+
+    animation:reboteSobre .8s ease;
+
+}
+
+@keyframes reboteSobre{
+
+    0%{
+
+        opacity:0;
+        transform:scale(.4) rotate(-20deg);
+
+    }
+
+    60%{
+
+        transform:scale(1.15);
+
+    }
+
+    100%{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+}
+
+/*=========================
+        CARTA
+=========================*/
+
+.carta{
+
+    margin-top:25px;
+
+    padding:28px;
+
+    background:white;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.10);
+
+    text-align:left;
+
+    white-space:pre-line;
+
+    line-height:32px;
+
+    font-size:18px;
+
+    transform-origin:top;
+
+    animation:abrirCarta .9s ease;
+
+}
+
+@keyframes abrirCarta{
+
+    0%{
+
+        opacity:0;
+        transform:rotateX(-90deg);
+
+    }
+
+    100%{
+
+        opacity:1;
+        transform:rotateX(0deg);
+
+    }
+
+}
+
+.cartaOculta{
+
+    animation:cerrarCarta .8s forwards;
+
+}
+
+@keyframes cerrarCarta{
+
+    0%{
+
+        opacity:1;
+        transform:rotateX(0deg) scale(1);
+
+    }
+
+    40%{
+
+        transform:rotateX(35deg);
+
+    }
+
+    70%{
+
+        transform:rotateX(75deg) scale(.96);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:rotateX(90deg) scale(.9);
+
+    }
+
+}
+
+#textoCarta strong{
+
+    display:block;
+
+    margin-top:35px;
+
+    text-align:right;
+
+    color:#ff4f91;
+
+    font-size:22px;
+
+    font-style:italic;
+
+    font-weight:bold;
+
+}
+#mensajeFinal{
+
+    display:none;
+
+    margin-top:30px;
+
+    font-size:18px;
+
+    color:#ff4f91;
+
+    opacity:0;
+
+}
+
+.mensajeFinalAparece{
+
+    display:block !important;
+
+    animation:mensajeFinal 1s forwards;
+
+}
+
+@keyframes mensajeFinal{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}

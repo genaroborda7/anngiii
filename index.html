@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Una sorpresa para vos</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="decoraciones">
+
+        <span class="d1">✨</span>
+        <span class="d2">⭐</span>
+        <span class="d3">💖</span>
+        <span class="d4">🎁</span>
+        <span class="d5">✨</span>
+        <span class="d6">🤍</span>
+        <span class="d7">💗</span>
+        <span class="d8">⭐</span>
+
+    </div>
+
+    <div class="contenedor">
+        <div class="progreso">
+
+    <p>🎁 Tu recorrido</p>
+
+    <div class="barra">
+
+    <div class="paso activo"></div>
+<div class="paso"></div>
+<div class="paso"></div>
+<div class="paso"></div>
+<div class="paso"></div>
+<div class="paso"></div>
+<div class="paso"></div>
+<div class="paso"></div>
+<div class="paso"></div>
+
+    </div>
+
+</div>
+
+        <!-- Pantalla 1 -->
+
+        <div class="pantalla activa" id="pantalla1">
+
+            <h1 class="regalo">🎁</h1>
+
+            <h2>Una pequeña sorpresa para vos</h2>
+
+            <p>
+                Espero que este detalle te saque una sonrisa ❤️
+            </p>
+
+            <button id="btnEmpezar">
+                Empezar
+            </button>
+
+        </div>
+
+               <!-- Pantalla 2 -->
+
+<div class="pantalla" id="pantalla2">
+
+    <h1>🛑​</h1>
+
+    <h2>Antes de empezar...</h2>
+
+    <p>
+        Quiero pedirte una sola cosa.
+        <br><br>
+
+        Disfrutá este pequeño recorrido que prepare para vos con mucho cariño y esfuerzo.
+    
+        capaz no es el regalo mas caro o el mas grande pero espero que sea el mas especial.
+        <br><br>
+    </p>
+
+    <button id="btnContinuar">
+        Comenzar recorrido
+    </button>
+
+</div>
+<!-- Pantalla 3 -->
+
+<div class="pantalla" id="pantalla3">
+
+    <h1>🔒</h1>
+
+    <h2>Pensaste que te iba a dar el regalo tan facil?</h2>
+
+    <p>
+
+        Para poder abrirlo vas a tener que pasar unas pruebas
+        <br><br>
+
+        ¿Estás lista?
+
+    </p>
+<button id="btnVamos">
+    Lista
+</button>
+</div>
+    <!-- Pantalla 4 -->
+
+<div class="pantalla" id="pantalla4">
+
+    <h1>❤️</h1>
+
+    <h2>Desafío 1</h2>
+
+    <p>
+        Vamos a ver si estas atenta. encontra el corazon.
+    </p>
+
+    <div class="emojis">
+<span>⭐</span>
+<span>🎁</span>
+<span>🌸</span>
+<span>🎈</span>
+
+<span>🎂</span>
+<span>🐍​</span>
+<span>🧸</span>
+<span>⛔​</span>
+
+<span>🚨​</span>
+<span id="corazon">❤️</span>
+<span>🌙</span>
+<span>🔴​</span>
+
+<span>🎉</span>
+<span>🌺</span>
+<span>🦋</span>
+<span>​🦌​</span>
+      
+    </div>
+
+    <p id="mensaje"></p>
+
+</div>
+<!-- Pantalla 5 -->
+
+<div class="pantalla" id="pantalla5">
+
+    <h1>🤔</h1>
+
+    <h2>Desafío 2</h2>
+
+    <p id="pregunta">
+        Una pregunta facil
+        ¿Que es lo que mas disfruta Angi?
+    </p>
+
+    <div class="opciones">
+
+        <button class="respuesta incorrectaPregunta">
+            Dormir
+        </button>
+
+        <button class="respuesta incorrectaPregunta">
+            Trabajar
+        </button>
+
+        <button class="respuesta incorrectaPregunta">
+            Estudiar
+        </button>
+
+        <button class="respuesta correctaPregunta">
+            Pelear a genaro 
+        </button>
+
+    </div>
+
+    <p id="mensajePregunta"></p>
+
+</div>
+
+<!-- Pantalla 6 -->
+
+<div class="pantalla" id="pantalla6">
+
+    <h1>🧩</h1>
+
+    <h2>Último desafío</h2>
+
+    <p>
+        Armá el rompecabezas para descubrir la sorpresa
+    </p>
+
+    <div id="puzzle"></div>
+
+    <p id="textoPuzzle"></p>
+
+</div>
+<!-- Pantalla 7 -->
+<div class="pantalla" id="pantalla7">
+
+    <div class="fotoFinal" id="fotoFinal">
+
+        <img src="img/foto.png" alt="Nuestra foto">
+
+    </div>
+
+    <h2>🎉 ¡Feliz Cumpleaños! 🎉</h2>
+
+    <p>
+        Espero que este pequeño regalo te haya gustado ❤️
+    </p>
+
+    <button id="btnSiguiente">
+        Una cosa mas...❔​
+    </button>
+
+</div>
+
+
+<!-- Pantalla 8 -->
+
+<div class="pantalla" id="pantalla8">
+
+    <h1>💖</h1>
+
+    <h2>Todavia queda una cosa mas.</h2>
+
+    <p>
+
+        Si llegaste hasta acá...
+
+        <br><br>
+
+        Significa que completaste todos los desafíos.
+
+        <br><br>
+
+        Te felicito por ser tan inteligente para poder pasar esos desafios imposibles.
+
+        <br><br>
+
+        Pero todavia falta este detalle.
+
+    </p>
+
+    <button id="btnCarta">
+
+        ❤️ Abrir
+
+    </button>
+
+</div>
+
+<!-- Pantalla 9 -->
+
+<div class="pantalla" id="pantalla9">
+
+    <h1 id="sobre">💌</h1>
+
+    <h2>Para vos...</h2>
+
+    <div id="textoCarta"></div>
+
+    <p id="mensajeFinal" style="display:none;">
+
+    Espero que mi pequeña sorpresa te haya sacado una sonrisa ❣️​
+
+</p>
+
+<div id="botonesFinales" style="display:none;">
+
+    <button id="btnLeer">
+        📖 Leer otra vez la carta
+    </button>
+
+    <button id="btnReiniciar">
+        🎁 Reiniciar el recorrido
+    </button>
+
+</div>
+
+</div>
+
+
+</div>
+
+<audio id="musica" loop>
+    <source src="audio/musica.mp3" type="audio/mpeg">
+</audio>
+<audio id="clickSound" src="audio/click.mp3"></audio>
+<audio id="correctoSound" src="audio/correcto.mp3"></audio>
+<audio id="errorSound" src="audio/error.mp3"></audio>
+<audio id="victoriaSound" src="audio/victoria.mp3"></audio>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
